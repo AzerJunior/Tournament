@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournament Bracket Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Tournament Bracket Generator</h1>
+        </header>
+
+        <main>
+            <!-- Tournament Setup Section -->
+            <section id="setup-section" class="section">
+                <h2>Tournament Setup</h2>
+                <div class="setup-form">
+                    <div class="form-group">
+                        <label for="tournament-size">Tournament Size:</label>
+                        <select id="tournament-size">
+                            <option value="4">4 Players</option>
+                            <option value="6">6 Players</option>
+                            <option value="12">12 Players</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="losers-bracket"> 
+                            Enable Losers Bracket
+                        </label>
+                    </div>
+                    
+                    <button id="generate-bracket" class="btn primary">Generate Tournament</button>
+                </div>
+            </section>
+
+            <!-- Player Setup Section -->
+            <section id="player-section" class="section hidden">
+                <h2>Add Players</h2>
+                <div id="player-inputs" class="player-inputs"></div>
+                <button id="start-tournament" class="btn primary">Start Tournament</button>
+            </section>
+
+            <!-- Tournament Bracket Section -->
+            <section id="bracket-section" class="section hidden">
+                <h2>Tournament Bracket</h2>
+                <div class="bracket-controls">
+                    <span id="current-round">Round 1</span>
+                    <button id="next-round" class="btn secondary hidden">Next Round</button>
+                </div>
+                <div id="tournament-bracket" class="bracket-container"></div>
+            </section>
+
+            <!-- Match Selection Section -->
+            <section id="match-section" class="section hidden">
+                <h2>Select Winner</h2>
+                <div id="current-match" class="match-display">
+                    <div class="match-players">
+                        <div id="player1" class="player-card">
+                            <img id="player1-img" src="" alt="">
+                            <h3 id="player1-name"></h3>
+                            <button id="select-player1" class="btn winner-btn">Select Winner</button>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div id="player2" class="player-card">
+                            <img id="player2-img" src="" alt="">
+                            <h3 id="player2-name"></h3>
+                            <button id="select-player2" class="btn winner-btn">Select Winner</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tournament Complete Section -->
+            <section id="complete-section" class="section hidden">
+                <h2>Tournament Complete!</h2>
+                <div id="winner-display" class="winner-display">
+                    <img id="winner-img" src="" alt="">
+                    <h2 id="winner-name"></h2>
+                    <p>Tournament Champion!</p>
+                </div>
+                <button id="new-tournament" class="btn primary">Start New Tournament</button>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
